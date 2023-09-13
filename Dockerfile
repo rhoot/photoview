@@ -81,7 +81,7 @@ RUN apt update \
 # And create darktable directories for non-root users
 RUN if [ "${TARGETPLATFORM}" = "linux/amd64" ] || [ "${TARGETPLATFORM}" = "linux/arm64" ]; then \
   apt install -y darktable && \
-  mkdir -p /.cache/darktable /.config/darktable; fi
+  mkdir -p /app/.cache/darktable /app/.config/darktable; fi
 
 # Remove build dependencies and cleanup
 RUN apt purge -y gpg \
